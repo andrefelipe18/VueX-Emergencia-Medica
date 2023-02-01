@@ -5,13 +5,22 @@
                 <h5><i class="bi-file-person me-2"></i>Profissionais</h5>
                 <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <router-link class="nav-link" :to="{ name: 'profissionais', params: { tipo: 'enfermeiros' } }">Enfermeiros</router-link>
+                    <router-link class="nav-link" 
+                    :to="{ name: 'profissionais', params: { tipo: 'enfermeiros' } }">
+                    Enfermeiros ({{ totalEnfermeiros }})
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" :to="{ name: 'profissionais', params: { tipo: 'socorristas' } }">Socorristas</router-link>
+                    <router-link class="nav-link" 
+                    :to="{ name: 'profissionais', params: { tipo: 'socorristas' } }">
+                    Socorristas ({{ totalSocorristas }})
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" :to="{ name: 'profissionais', params: { tipo: 'medicos' } }">Médicos</router-link>
+                    <router-link class="nav-link" 
+                    :to="{ name: 'profissionais', params: { tipo: 'medicos' } }">
+                    Médicos
+                    </router-link>
                 </li>
                 </ul>
             </div>
@@ -25,7 +34,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
     name: 'Profissionais',
+    computed: {
+        ...mapGetters({
+            totalEnfermeiros: 'totalEnfermeiros',
+            totalSocorristas: 'totalSocorristas'
+        })
+    }
 }
 </script>
