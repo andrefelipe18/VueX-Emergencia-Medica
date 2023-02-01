@@ -8,6 +8,7 @@
 
 <script>
 import Item from '@/components/Item.vue'
+import { mapState } from 'vuex'
 
 export default {
     name: 'ListaItens',
@@ -16,6 +17,13 @@ export default {
     },
     props: {
         tipo: String
+    },
+    computed: {
+        ...mapState({
+            enfermeiros: state => state.equipe.enfermeiros,
+            socorristas: state => state.equipe.socorristas,
+            medicos: state => state.equipe.medicos,
+        })
     }
 }
-</script>
+</script>''
