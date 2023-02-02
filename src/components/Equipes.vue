@@ -7,19 +7,19 @@
         </div>
         <div class="row">
             <div class="col">
-                <ListaItens tipo="equipes-montadas" />
+                <lista-equipes-component />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import ListaItens from '@/components/ListaItens'
+import ListaEquipesComponent from './ListaEquipesComponent.vue';
 
 export default {
     name: 'Equipes',
     components: {
-        ListaItens
+        ListaEquipesComponent
     },
     computed: {
         
