@@ -4,12 +4,12 @@ export default createStore({
   state: {
     titulo: '## Emergencias médicas ##',
     equipe: {
-      enfermeiro: 'Nome do Enfermeiro',
-      socorrista: 'Nome do Socorrista',
-      medico: 'Nome do Médico',
-      carro: 'Placa do carro',
-      telefone: '+55 11 99999-9999',
-      kitDeReanimacao: 'Kit 0202',
+      enfermeiro: '',
+      socorrista: '',
+      medico: '',
+      carro: '',
+      telefone: '',
+      kitDeReanimacao: '',
     },
     enfermeiros: [
       { id: 1, nome: 'João', escala: '12x36'},
@@ -75,6 +75,17 @@ export default createStore({
     }
   },
   mutations: {
+    setItemEquipe: (state, dadosEnviados) => {
+      let t = dadosEnviados.tipo
+      let dados = dadosEnviados.dados
+      
+      if(t == 'enfermeiros') { state.equipe.enfermeiro = dados.nome }
+      if(t == 'socorristas') { state.equipe.socorrista = dados.nome }
+      if(t == 'medicos') { state.equipe.medico = dados.nome }
+      if(t == 'carros') { state.equipe.carro = dados.placa }
+      if(t == 'telefones') { state.equipe.telefone = dados.telefone }
+      if(t == 'kits-de-reanimacao') { state.equipe.kitDeReanimacao = dados.kit }
+    }
   },
   actions: {
   },

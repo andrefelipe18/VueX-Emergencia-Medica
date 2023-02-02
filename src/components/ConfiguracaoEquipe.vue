@@ -7,12 +7,12 @@
     </div>
     <div class="row">
       <div class="col-8">
-        <p>Enfermeiro: {{ enfermeiro }}</p>
-        <p>Socorrista: {{ socorrista }}</p>
-        <p>Médico: {{ medico }}</p>
-        <p>Carro: {{ carro }}</p>
-        <p>Telefone: {{ telefone }}</p>
-        <p>Kit de reanimação: {{ kitDeReanimacao }}</p>
+        <p>Enfermeiro: <span class="spanI"> {{ enfermeiro }}</span></p>
+        <p>Socorrista: <span class="spanI"> {{ socorrista }}</span></p>
+        <p>Médico: <span class="spanI">{{ medico }}</span></p>
+        <p>Carro: <span class="spanI">{{ carro }}</span></p>
+        <p>Telefone: <span class="spanI">{{ telefone }}</span></p>
+        <p>Kit de reanimação: <span class="spanI">{{ kitDeReanimacao }}</span></p>
       </div>
       <div class="col-4 text-center">
         <div class="row">
@@ -56,3 +56,9 @@ export default {
     }
 }
 </script>
+<style scoped>
+.spanI {
+  font-weight: bold;
+  color: #007bff;
+}
+</style>
